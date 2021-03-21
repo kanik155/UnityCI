@@ -72,25 +72,7 @@ jobs:
           command: |
             chmod -R 755 ./ci/build.sh
             ./ci/build.sh
-      - run:
-          <<: *remove_license_file
-      - store_artifacts:
-          path: './Builds/'
-  build_StandaloneOSX:
-    <<: *docker_image
-    steps:
-      - run:
-          command: |
-            apt-get update && apt-get install -y git zip && git --version
-      - checkout
-      - run:
-          <<: *setup_unity_license_env_var
-      - run:
-          environment:
-            BUILD_TARGET: StandaloneOSX
-          command: |
-            chmod -R 755 ./ci/build.sh
-            ./ci/build.sh
+          no_output_timeout: 60m
       - run:
           <<: *remove_license_file
       - store_artifacts:
