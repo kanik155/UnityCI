@@ -115,7 +115,8 @@ static class BuildCommand
 	static BuildOptions GetBuildOptions ()
 	{
 		string buildOptions = GetArgument ("customBuildOptions");
-		return buildOptions == "AcceptExternalModificationsToPlayer" ? BuildOptions.AcceptExternalModificationsToPlayer : BuildOptions.None;
+		// return buildOptions == "AcceptExternalModificationsToPlayer" ? BuildOptions.AcceptExternalModificationsToPlayer : BuildOptions.None;
+		return BuildOptions.None;
 	}
 
 	// https://stackoverflow.com/questions/1082532/how-to-tryparse-for-enum-value
